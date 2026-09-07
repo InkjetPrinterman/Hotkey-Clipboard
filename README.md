@@ -1,7 +1,7 @@
 # Hotkey-Clipboard
 A windows tray program that helps you designate hotkeys to copy and paste selected text. 
 
-Unpack ZIP (HotkeyClipboard.ZIP) and double click the Application. 
+Unpack ZIP (HotkeyClipboard.zip) and double click the Application. 
 
 Press CTRL+ALT+R to begin recording (6 second window) a hotkey with a modifier (CTRL+L, or SHIFT+M for example, whatever you like). 
 
