@@ -83,18 +83,34 @@ namespace HotkeyClipboard
             }
         }
 
-        private void DeleteBtn_Click(object? sender, EventArgs e)
+    private void DeleteBtn_Click(object? sender, EventArgs e)
         {
             if (listView.SelectedItems.Count == 0) return;
-            var snip = (Snippet)listView.SelectedItems[0].Tag!;
 
-            var confirm = MessageBox.Show(this, $"Delete the shortcut {snip.Combo}?", "Confirm",
+    // Snapshot the selected snippets first — we're about to mutate
+    // the store and repopulate the list, so don't rely on
+    // SelectedItems staying valid mid-loop.
+            var selected = listView.SelectedItems
+                .Cast<ListViewItem>()
+                .Select(item => (Snippet)item.Tag!)
+                .ToList();
+
+            string message = selected.Count == 1
+                ? $"Delete the shortcut {selected[0].Combo}?"
+                : $"Delete these {selected.Count} shortcuts?\n\n" +
+                  string.Join("\n", selected.Select(s => s.Combo.ToString()));
+
+            var confirm = MessageBox.Show(this, message, "Confirm",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm != DialogResult.Yes) return;
 
-            SnippetDeleted?.Invoke(snip);
-            store.Remove(snip);
-            Populate();
+            foreach (var snip in selected)
+            {
+                SnippetDeleted?.Invoke(snip);
+                store.Remove(snip);
+            }
+
+               Populate();
         }
     }
 }
