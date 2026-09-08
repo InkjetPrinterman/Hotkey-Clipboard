@@ -69,36 +69,7 @@ inside the app.
 - **Manage Saved Shortcuts** — see every combo you've recorded, a
   preview of the saved text, and delete ones you don't need anymore.
 
-## If your keyboard feels "stuck" right now
 
-If you were using an earlier build and modifier keys (Ctrl/Alt/Shift)
-now seem to be interfering with normal typing even with the app
-closed: this is a Windows-level key state issue, not something tied to
-the app's process. **Just press and release Ctrl, Alt, Shift, and Win
-individually a few times** — that alone resets Windows' internal
-"is this key held" tracking for each one. No reboot needed.
-
-## Failsafes against this happening again
-
-Simulating Ctrl+C/Ctrl+V works by injecting synthetic key presses.
-If that injection is ever only partially delivered (for example,
-Windows can silently block injected input aimed at an elevated/Admin
-window when this app isn't also elevated) or interrupted by an error,
-Windows can be left believing a modifier is still held down —
-breaking normal typing until that specific key is pressed again. To
-prevent that, the app now forces every modifier key back to "up" at
-the OS level:
-
-- After every simulated copy or paste
-- The instant a recording window closes, for any reason (success,
-  timeout, or Escape)
-- On startup (covers anything left over from a previous run)
-- On normal exit
-- On any unexpected/unhandled error anywhere in the app
-- On demand, via **Fix Stuck Modifier Keys** in the tray menu
-
-This is safe to do liberally — releasing a key that isn't actually
-held has no effect at all.
 
 ## Where your data is stored
 
