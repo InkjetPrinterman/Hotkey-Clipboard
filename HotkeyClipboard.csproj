@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>HotkeyClipboard</AssemblyName>
+    <RootNamespace>HotkeyClipboard</RootNamespace>
+    <StartupObject>HotkeyClipboard.Program</StartupObject>
+    <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <!--
+    A few extra global usings so individual files don't need to repeat
+    "using System.Windows.Forms;" etc. everywhere.
+  -->
+  <ItemGroup>
+    <Using Include="System.Windows.Forms" />
+    <Using Include="System.Drawing" />
+    <Using Include="System.Media" />
+    <Using Include="System.Runtime.InteropServices" />
+    <Using Include="System.Diagnostics" />
+    <Using Include="System.Threading" />
+  </ItemGroup>
+
+</Project>
