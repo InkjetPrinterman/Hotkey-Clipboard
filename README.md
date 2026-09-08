@@ -33,7 +33,7 @@ the recording window to cancel it early instead of waiting it out.
 
 - Windows 10 or 11
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- Visual Studio 2022 (optional — the `dotnet` CLI is enough)
+- Visual Studio (optional — the `dotnet` CLI is enough)
 
 ## Build & run
 
