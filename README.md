@@ -46,17 +46,7 @@ dotnet run -c Release
 
 Or open `HotkeyClipboard.sln` in Visual Studio and press F5.
 
-## Publish a single portable .exe
-
-```
-dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
-```
-
-The .exe will be under `bin\Release\net8.0-windows\win-x64\publish\`.
-Copy it anywhere on the target machine and double-click it. No installer
-is included — you can add the app to your Windows startup folder, or
-enable "Start automatically when Windows starts" from **Settings**
-inside the app.
+You can find a pre-built upload of this application under "Releases" on the main repo page. 
 
 ## Using the app
 
