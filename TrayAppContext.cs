@@ -244,7 +244,7 @@ namespace HotkeyClipboard
                 string? capturedText = ClipboardHelper.TryGetTextAsync();
 
                 if (Settings.RestoreClipboardAfterUse && previousClipboard != null)
-                    ClipboardHelper.TryGetTextAsync(previousClipboard);
+                    ClipboardHelper.TrySetTextAsync(previousClipboard);
 
                 if (string.IsNullOrEmpty(capturedText))
                 {
