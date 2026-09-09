@@ -237,14 +237,14 @@ namespace HotkeyClipboard
                     return;
                 }
 
-                string? previousClipboard = ClipboardHelper.TryGetTextAsync();
+                string? previousClipboard = await ClipboardHelper.TryGetTextAsync();
 
                 InputSimulator.SendCopy();
                 await Task.Delay(150);
-                string? capturedText = ClipboardHelper.TryGetTextAsync();
+                string? capturedText = await ClipboardHelper.TryGetTextAsync();
 
                 if (Settings.RestoreClipboardAfterUse && previousClipboard != null)
-                    ClipboardHelper.TrySetTextAsync(previousClipboard);
+                   await ClipboardHelper.TrySetTextAsync(previousClipboard);
 
                 if (string.IsNullOrEmpty(capturedText))
                 {
