@@ -16,6 +16,7 @@ namespace HotkeyClipboard
     /// into the document and replace any highlighted text.
     /// </summary>
     public class LowLevelKeyboardHook : IDisposable
+    private SynchronizationContext? marshal;
     {
         public event Action<int, bool>? KeyEvent;
 
@@ -30,6 +31,7 @@ namespace HotkeyClipboard
         public void Install()
         {
             if (hookId != IntPtr.Zero) return;
+            marshal = SynchronizationContext.Current ?? new WindowsFormsSynchronizationContext();
             using var curProcess = Process.GetCurrentProcess();
             using var curModule = curProcess.MainModule;
             hookId = SetWindowsHookEx(WH_KEYBOARD_LL, proc, GetModuleHandle(curModule?.ModuleName), 0);
