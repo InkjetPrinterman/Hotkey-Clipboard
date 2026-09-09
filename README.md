@@ -21,7 +21,7 @@ the shortcut manager.
    snippets as you want — each with its own paste combo.
 
 If nothing was highlighted, or the countdown runs out before you press
-a combo, nothing is saved and you'll see/hear a notification saying so.
+a combo, nothing is saved and you'll see a notification saying so.
 
 While the recording window is open, **every key you press is swallowed
 and never reaches whatever app has focus** — so pressing, say, "1" to
