@@ -15,7 +15,7 @@ namespace HotkeyClipboard
     /// e.g. pressing "1" while defining Ctrl+1 in Notepad would type "1"
     /// into the document and replace any highlighted text.
     /// </summary>
-    public class LowLevelKeyboardHook : IDisposable
+public class LowLevelKeyboardHook : IDisposable {
 public event Action<int, bool>? KeyEvent;
 
 private IntPtr hookId = IntPtr.Zero;
