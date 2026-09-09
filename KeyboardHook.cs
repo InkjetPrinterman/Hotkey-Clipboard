@@ -48,6 +48,7 @@ namespace HotkeyClipboard
 
         private IntPtr HookCallback(int nCode, IntPtr wParam, IntPtr lParam)
         {
+            IntPtr thisHook = hookId;
             if (nCode >= 0)
             {
                 uint flags = unchecked((uint)Marshal.ReadInt32(lParam, 8));
