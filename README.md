@@ -35,6 +35,8 @@ the recording window to cancel it early instead of waiting it out.
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 - Visual Studio (optional — the `dotnet` CLI is enough)
 
+(You can find a pre-built upload of this application under "Releases" on the main repo page.)
+
 ## Build & run
 
 From a command prompt in this folder:
@@ -45,8 +47,6 @@ dotnet run -c Release
 ```
 
 Or open `HotkeyClipboard.sln` in Visual Studio and press F5.
-
-You can find a pre-built upload of this application under "Releases" on the main repo page. 
 
 ## Using the app
 
