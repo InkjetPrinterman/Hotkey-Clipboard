@@ -11,7 +11,7 @@ the shortcut manager.
 
 ## How it works
 
-1. Press the **recording hotkey** (default `Ctrl+Alt+R`). A small
+1. Press the **recording hotkey** (default `Ctrl+Shift+C`). A small
    on-screen notification appears and a countdown starts (default 5s).
 2. While it's counting down, hold a modifier (Ctrl/Alt/Shift/Win) and
    press a key — e.g. `Ctrl+1`. Whatever text is currently highlighted
