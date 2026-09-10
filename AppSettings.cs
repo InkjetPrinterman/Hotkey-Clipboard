@@ -10,7 +10,7 @@ namespace HotkeyClipboard
         public const int MaxRecordingWindowSeconds = 10;
 
         /// <summary>Hotkey that opens the "recording window" to define a new snippet.</summary>
-        public HotkeyCombo RecordHotkey { get; set; } = new HotkeyCombo { Ctrl = true, Alt = true, Key = Keys.R };
+        public HotkeyCombo RecordHotkey { get; set; } = new HotkeyCombo { Ctrl = true, Shift = true, Key = Keys.C };
 
         /// <summary>How many seconds the recording window stays open waiting for a combo.</summary>
         public int RecordingWindowSeconds { get; set; } = 5;
